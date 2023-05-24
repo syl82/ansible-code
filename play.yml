@@ -17,6 +17,10 @@
         path: /tmp/ansible.txt
         state: touch
         mode: '0600'
+      register: output
+    - name: read the output
+      debug:
+       msg: "Hello from ansible this is running on {{ ansible_os_family }}"  
     - name: Create directory
       file:
         path: /tmp/dir
